@@ -46,7 +46,7 @@ This project uses the following major dependencies:
 - JUnit 5 (Jupiter) 5.11.4
 - Log4j 2.24.0
 - PostgreSQL JDBC Driver 42.7.7
-- Testcontainers 2.0.1
+- Testcontainers 1.20.1
 
 ## Additional Resources
 
