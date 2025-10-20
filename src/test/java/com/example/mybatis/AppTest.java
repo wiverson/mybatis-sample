@@ -1,18 +1,18 @@
 package com.example.mybatis;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.apache.ibatis.session.SqlSession;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 
 public class AppTest {
 
-    @BeforeClass
+    @BeforeAll
     static public void testApp() {
         App.init();
 
@@ -30,13 +30,13 @@ public class AppTest {
     private TransactionTokenMapper mapper = null;
     private SqlSession session = null;
 
-    @Before
+    @BeforeEach
     public void setupSession() {
         session = App.factory.openSession();  // This obtains a database connection!
         mapper = session.getMapper(TransactionTokenMapper.class);
     }
 
-    @After
+    @AfterEach
     public void closeSession() {
         session.commit();  // This commits the data to the database. Required even if auto-commit=true
         session.close();   // This releases the connection
