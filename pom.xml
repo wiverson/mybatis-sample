@@ -17,7 +17,8 @@
         <junit.version>5.11.4</junit.version>
         <mybatis.version>3.5.19</mybatis.version>
         <log4j.version>2.24.0</log4j.version>
-        <h2.version>2.3.232</h2.version>
+        <postgresql.version>42.7.7</postgresql.version>
+        <testcontainers.version>2.0.1</testcontainers.version>
     </properties>
 
     <dependencies>
@@ -43,9 +44,27 @@
             <version>${log4j.version}</version>
         </dependency>
         <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-            <version>${h2.version}</version>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>${postgresql.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.testcontainers</groupId>
+            <artifactId>testcontainers</artifactId>
+            <version>${testcontainers.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.testcontainers</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>${testcontainers.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.testcontainers</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>${testcontainers.version}</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
