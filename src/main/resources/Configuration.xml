@@ -9,20 +9,12 @@
 		<environment id="development">
 			<transactionManager type="JDBC" />
             <dataSource type="POOLED">
-
-                <!-- H2 in-memory mode -->
-				<property name="driver" value="org.h2.Driver" />
-				<property name="url" value="jdbc:h2:mem:test" />
-				<property name="username" value="sa" />
-				<property name="password" value="sa" />
-
-                <!-- MySQL Sample Properties -->
-                <!--<property name="driver" value="com.mysql.jdbc.Driver" />-->
-                <!--<property name="url" value="jdbc:mysql://localhost/fingw?autoCommit=true" />-->
-                <!--<property name="username" value="root" />-->
-                <!--<property name="password" value="" />-->
-
-
+                <!-- PostgreSQL Configuration -->
+                <!-- These values can be overridden by Testcontainers during tests -->
+				<property name="driver" value="org.postgresql.Driver" />
+				<property name="url" value="jdbc:postgresql://localhost:5432/testdb" />
+				<property name="username" value="test" />
+				<property name="password" value="test" />
             </dataSource>
 		</environment>
 	</environments>

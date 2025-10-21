@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Appenders>
+        <!-- Console output -->
+        <Console name="STDOUT" target="SYSTEM_OUT">
+            <PatternLayout pattern="%-5p %d{MM-dd HH:mm:ss} %m  (%F:%L) %n"/>
+        </Console>
+    </Appenders>
+
+    <Loggers>
+        <!-- Set the priority to debug for these two values to see nice debugging output -->
+        <Logger name="java.sql" level="error"/>
+        <Logger name="com.ibatis" level="error"/>
+        <Logger name="org.apache.ibatis" level="error"/>
+
+        <Root level="error">
+            <AppenderRef ref="STDOUT"/>
+        </Root>
+    </Loggers>
+</Configuration>

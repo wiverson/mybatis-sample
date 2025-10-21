@@ -17,7 +17,7 @@ public interface TransactionTokenMapper {
      * of functionality to both intialize the database for test purposes as well as validating the bindings. For
      * example, a standard schema() method and a validate() method, called as part of the factory setup.
      */
-    @Update("create table trans_token (id bigint auto_increment, trans_id varchar, token_id varchar)")
+    @Update("create table trans_token (id bigserial primary key, trans_id varchar, token_id varchar)")
     void schema();
 
     @Select({
