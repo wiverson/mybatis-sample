@@ -41,7 +41,7 @@ public class AppTest {
 
         Environment environment = new Environment("development", new JdbcTransactionFactory(), dataSource);
         Configuration config = new Configuration(environment);
-        config.getSettings().setUseGeneratedKeys(true);
+        config.setUseGeneratedKeys(true);
         config.addMapper(TransactionTokenMapper.class);
 
         App.factory = new SqlSessionFactoryBuilder().build(config);
